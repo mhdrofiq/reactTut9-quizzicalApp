@@ -1,13 +1,36 @@
 import React from "react"
 import Question from "./components/Question"
+import {nanoid} from "nanoid"
 
 export default function App(){
 
   const [startQuiz, setStartQuiz] = React.useState(false)
+  const [questions, setQuestions] = React.useState([])
+
+  React.useEffect(() => {
+    fetch("https://opentdb.com/api.php?amount=5&type=multiple")
+      .then(res => res.json())
+      .then(data => setQuestions(data.results))
+  },[])
+
+  console.log(questions)
 
   function showQuiz(){
     setStartQuiz(true)
   }
+
+  function prepQuestions(){
+
+  }
+
+  const questionElements = questions.map(q => 
+    <Question 
+      //key = {nanoid()}
+      questionText = {q.question}
+      wrongAns = {q.incorrect_answers}
+      rightAns = {q.correct_answer}
+    />
+  )
   
   return(
     <main>
@@ -15,11 +38,7 @@ export default function App(){
         startQuiz 
         ?
         <div className="quiz-container">
-          <Question/>
-          <Question/>
-          <Question/>
-          <Question/>
-          <Question/>
+          {questionElements}
           <div className="check-answer-container">
             {/* <h4 className="result">
               You scored 3/5 correct answers

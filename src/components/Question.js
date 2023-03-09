@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Question(){
+export default function Question(props){
     
     const styles = {
         backgroundColor: "#D6DBF5",
@@ -10,7 +10,7 @@ export default function Question(){
     return(
         <div className="question-container">
             <h4 className="question-text">
-                How would one say goodbye in spanish?
+                {props.questionText}
             </h4>
             <div className="answer-container">
                 <button className="answer-btn">Adios</button>

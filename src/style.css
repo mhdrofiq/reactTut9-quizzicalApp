@@ -10,8 +10,8 @@ body{
 
 main{
   background-color: #F5F7FB;
-  width: 550px;
-  height: 550px;
+  width: 600px;
+  height: 600px;
   border-radius: 10px;
   display: flex;
   align-items: center;
