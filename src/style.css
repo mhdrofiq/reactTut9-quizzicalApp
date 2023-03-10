@@ -10,8 +10,8 @@ body{
 
 main{
   background-color: #F5F7FB;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 650px;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -76,14 +76,20 @@ main{
 }
 
 .answer-btn{
-  height: 20.650205612182617px;
+  height: fit-content;
   width: fit-content;
   border-radius: 7.942387104034424px;
-  background-color: transparent;
+  /* background-color: transparent; */
   border: 0.794239px solid #4D5B9E;
   font-family: 'Inter';
   font-size: 10px;
   color: #293264;
+  padding: 3px 10px 3px 10px;
+  cursor: pointer;
+}
+
+.answer-btn:active{
+  box-shadow: 2px 2px 5px grey;
 }
 
 hr{

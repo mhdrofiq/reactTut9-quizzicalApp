@@ -6,6 +6,8 @@ export default function App(){
 
   const [startQuiz, setStartQuiz] = React.useState(false)
   const [questions, setQuestions] = React.useState([])
+  const [doneQuiz, setDoneQuiz] = React.useState(false)
+  const [tally, setTally] = React.useState(0)
 
   React.useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=5&type=multiple")
@@ -19,17 +21,14 @@ export default function App(){
     setStartQuiz(true)
   }
 
-  function prepQuestions(){
-
-  }
-
   const questionElements = questions.map(q => 
     <Question 
-      //key = {nanoid()}
+      key = {nanoid()}
       questionText = {q.question}
       wrongAns = {q.incorrect_answers}
       rightAns = {q.correct_answer}
     />
+    
   )
   
   return(
