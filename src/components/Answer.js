@@ -10,6 +10,7 @@ export default function Answer(props){
         <button 
             className="answer-btn" 
             style={styles}
+            onClick={props.selectAnswer}
         >
             {props.text}
         </button>
